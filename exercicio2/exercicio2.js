@@ -21,7 +21,13 @@ var list = [
         bio: "Nicolau Copérnico foi um astrônomo e matemático polonês que desenvolveu a teoria heliocêntrica do Sistema Solar."
     }
 ];
+// a) Crie uma função que retorne a bio do id passado
 var getBioById = function (id) {
     return list.find(function (person) { return person.id === id; }).bio;
 };
-console.log("Bio: " + getBioById(4));
+console.log({ bio: getBioById(4) });
+// b) Crie uma função que retorne o name do id passado
+var getNameById = function (id) {
+    return list.find(function (person) { return person.id === id; }).name;
+};
+console.log({ name: getNameById(2) });

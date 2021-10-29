@@ -29,10 +29,19 @@ const list: Array<Person> = [
     }
 ];
 
+// a) Crie uma função que retorne a bio do id passado
+
 const getBioById = (id:number): string => {
     return list.find(person => person.id === id).bio;
 }
 
-console.log("Bio: " + getBioById(4));
+console.log({ bio: getBioById(4) });
   
+// b) Crie uma função que retorne o name do id passado
+
+const getNameById = (id:number): string => {
+    return list.find(person => person.id === id).name;
+}
+
+console.log({ name: getNameById(2) });
 
