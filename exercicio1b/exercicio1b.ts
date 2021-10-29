@@ -1,16 +1,16 @@
 /* b) Dar um exemplo de uso com uma palavra recebida via input no formulário. */
 
-const getInputValue = (event: Event) => {
+const getInputValue = (event: Event): void => {
     event.preventDefault();
 
-    const text: HTMLSelectElement = document.getElementById("input") as HTMLSelectElement;
+    const inputText: HTMLInputElement = document.getElementById("input") as HTMLInputElement;
 
-    alert("Quantidade de vogais: " + vowelsCountInput(text.value));
+    alert("Quantidade de vogais: " + vowelsCountInput(inputText.value));
 }
 
-const vowelsCountInput = (word: string) => {
+const vowelsCountInput = (word: string): number => {
 
-    let totalVowels = 0;
+    let totalVowels: number = 0;
     const vowels: string[] = ['a', 'e', 'i', 'o', 'u'];
 
     for (let i = 0; i < vowels.length; i++) {

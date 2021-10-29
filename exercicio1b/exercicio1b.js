@@ -1,8 +1,8 @@
 /* b) Dar um exemplo de uso com uma palavra recebida via input no formulário. */
 var getInputValue = function (event) {
     event.preventDefault();
-    var text = document.getElementById("input");
-    alert("Quantidade de vogais: " + vowelsCountInput(text.value));
+    var inputText = document.getElementById("input");
+    alert("Quantidade de vogais: " + vowelsCountInput(inputText.value));
 };
 var vowelsCountInput = function (word) {
     var totalVowels = 0;
