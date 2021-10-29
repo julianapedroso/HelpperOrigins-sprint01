@@ -1,12 +1,5 @@
 /* 2 - Dado o array: */
-
-interface Person {
-    id: number,
-    name: string,
-    bio: string
-}
-
-const list: Array<Person> = [ 
+var list = [
     {
         id: 1,
         name: "Ada Lovelace",
@@ -28,7 +21,7 @@ const list: Array<Person> = [
         bio: "Nicolau Copérnico foi um astrônomo e matemático polonês que desenvolveu a teoria heliocêntrica do Sistema Solar."
     }
 ];
-
-//  a) Crie uma função que retorne a bio do id passado:
-
-console.log(list);
+var getBioById = function (id) {
+    return list.find(function (person) { return person.id === id; }).bio;
+};
+console.log("Bio: " + getBioById(4));
