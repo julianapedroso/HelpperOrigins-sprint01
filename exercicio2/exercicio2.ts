@@ -54,3 +54,16 @@ const deleteItemById = (id:number): void => {
 console.log("old list:", list);
 console.log(deleteItemById(2));
 console.log("new list:", list);
+
+// d) Crie uma função que altere a bio ou o name a partir de um id passado
+
+const updateItemById = (id: number, name?: string, bio?: string): void => {
+    const objectIndex = list.findIndex(item => item["id"] === id);
+    
+    name ? list[objectIndex]["name"] = name : null;
+
+    bio ? list[objectIndex]["bio"] = bio : null;
+}
+
+console.log(updateItemById(4, "Squad Delta", "Squad Delta é o melhor e mais incrível de todos <3" ));
+console.log("new list:", list);
