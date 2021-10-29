@@ -45,3 +45,12 @@ const getNameById = (id:number): string => {
 
 console.log({ name: getNameById(2) });
 
+// c) Crie uma função que apague um item da lista a partir de um id passado
+
+const deleteItemById = (id:number): void => {
+    list.splice(list.findIndex(item => item.id === id), 1);
+}
+
+console.log("old list:", list);
+console.log(deleteItemById(2));
+console.log("new list:", list);

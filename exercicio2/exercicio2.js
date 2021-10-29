@@ -31,3 +31,10 @@ var getNameById = function (id) {
     return list.find(function (person) { return person.id === id; }).name;
 };
 console.log({ name: getNameById(2) });
+// c) Crie uma função que apague um item da lista a partir de um id passado
+var deleteItemById = function (id) {
+    list.splice(list.findIndex(function (item) { return item.id === id; }), 1);
+};
+console.log("old list:", list);
+console.log(deleteItemById(2));
+console.log("new list:", list);
