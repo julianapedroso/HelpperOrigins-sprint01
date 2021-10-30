@@ -1,5 +1,12 @@
 /* 2 - Dado o array: */
-var list = [
+
+interface Person {
+    id: number,
+    name: string,
+    bio: string
+}
+
+const list: Array<Person> = [ 
     {
         id: 1,
         name: "Ada Lovelace",
@@ -21,28 +28,47 @@ var list = [
         bio: "Nicolau Copérnico foi um astrônomo e matemático polonês que desenvolveu a teoria heliocêntrica do Sistema Solar."
     }
 ];
+
+type PersonUpdate = {
+    name: string;
+    bio: string;
+}
+
+/* IMPERATIVO */
+
 // a) Crie uma função que retorne a bio do id passado
-var getBioById = function (id) {
-    return list.find(function (person) { return person.id === id; }).bio;
-};
+const getBioById = (id: number): string => {
+    for(let person of list) {
+        if(id === person.id) {
+            return person.bio
+        }    
+    }
+}
+
 console.log({ bio: getBioById(4) });
+
 // b) Crie uma função que retorne o name do id passado
-var getNameById = function (id) {
-    return list.find(function (person) { return person.id === id; }).name;
-};
+const getNameById = (id: number): string => {
+    for(let person of list) {
+        if(id === person.id) {
+            return person.name
+        }    
+    }
+}
+
 console.log({ name: getNameById(2) });
+
 // c) Crie uma função que apague um item da lista a partir de um id passado
-var deleteItemById = function (id) {
-    list.splice(list.findIndex(function (item) { return item.id === id; }), 1);
-};
+const deleteItemById = (id : number) : void => {
+    for(let i = 0; i < list.length; i++) {
+        let person = list[i]
+        if(id === person.id) {
+            list.splice(i, 1)
+        }
+    }
+}
+
 console.log("old list:", list);
 console.log(deleteItemById(2));
 console.log("new list:", list);
-// d) Crie uma função que altere a bio ou o name a partir de um id passado
-var updateItemById = function (id, name, bio) {
-    var objectIndex = list.findIndex(function (item) { return item["id"] === id; });
-    name ? list[objectIndex]["name"] = name : null;
-    bio ? list[objectIndex]["bio"] = bio : null;
-};
-console.log(updateItemById(4, "Squad Delta", "Squad Delta é o melhor e mais incrível de todos <3"));
-console.log("new list:", list);
+ 

@@ -1,12 +1,4 @@
-/* 2 - Dado o array: */
-
-interface Person {
-    id: number,
-    name: string,
-    bio: string
-}
-
-const list: Array<Person> = [ 
+var listFuncional = [
     {
         id: 1,
         name: "Ada Lovelace",
@@ -28,42 +20,29 @@ const list: Array<Person> = [
         bio: "Nicolau Copérnico foi um astrônomo e matemático polonês que desenvolveu a teoria heliocêntrica do Sistema Solar."
     }
 ];
-
+/* FUNCIONAL */
 // a) Crie uma função que retorne a bio do id passado
-
-const getBioById = (id:number): string => {
-    return list.find(person => person.id === id).bio;
-}
-
-console.log({ bio: getBioById(4) });
-  
+var getBioByIdFuncional = function (id) {
+    return listFuncional.find(function (person) { return person.id === id; }).bio;
+};
+console.log({ bio: getBioByIdFuncional(4) });
 // b) Crie uma função que retorne o name do id passado
-
-const getNameById = (id:number): string => {
-    return list.find(person => person.id === id).name;
-}
-
-console.log({ name: getNameById(2) });
-
+var getNameByIdFuncional = function (id) {
+    return listFuncional.find(function (person) { return person.id === id; }).name;
+};
+console.log({ name: getNameByIdFuncional(2) });
 // c) Crie uma função que apague um item da lista a partir de um id passado
-
-const deleteItemById = (id:number): void => {
-    list.splice(list.findIndex(item => item.id === id), 1);
-}
-
-console.log("old list:", list);
-console.log(deleteItemById(2));
-console.log("new list:", list);
-
+var deleteItemByIdFuncional = function (id) {
+    listFuncional.splice(listFuncional.findIndex(function (item) { return item.id === id; }), 1);
+};
+console.log("old listFuncional:", listFuncional);
+console.log(deleteItemByIdFuncional(2));
+console.log("new listFuncional:", listFuncional);
 // d) Crie uma função que altere a bio ou o name a partir de um id passado
-
-const updateItemById = (id: number, name?: string, bio?: string): void => {
-    const objectIndex = list.findIndex(item => item["id"] === id);
-    
-    name ? list[objectIndex]["name"] = name : null;
-
-    bio ? list[objectIndex]["bio"] = bio : null;
-}
-
-console.log(updateItemById(4, "Squad Delta", "Squad Delta é o melhor e mais incrível de todos <3" ));
-console.log("new list:", list);
+var updateItemByIdFuncional = function (id, name, bio) {
+    var objectIndex = listFuncional.findIndex(function (item) { return item["id"] === id; });
+    name ? listFuncional[objectIndex]["name"] = name : null;
+    bio ? listFuncional[objectIndex]["bio"] = bio : null;
+};
+console.log(updateItemByIdFuncional(4, "Squad Delta", "Squad Delta é o melhor e mais incrível de todos <3"));
+console.log("new listFuncional:", listFuncional);
