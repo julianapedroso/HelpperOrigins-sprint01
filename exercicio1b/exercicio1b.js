@@ -6,9 +6,9 @@ var getInputValue = function (event) {
 };
 var vowelsCountInput = function (word) {
     var totalVowels = 0;
-    var vowels = ['a', 'e', 'i', 'o', 'u'];
+    var vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
     for (var i = 0; i < vowels.length; i++) {
-        if (word.includes(vowels[i])) {
+        if (vowels.includes(word[i])) {
             totalVowels++;
         }
     }
