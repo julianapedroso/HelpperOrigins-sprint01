@@ -2,9 +2,10 @@
         a) Dar um exemplo de uso com uma palavra recebida via parâmetro da função. */
 var vowelsCount = function (text) {
     var totalVowels = 0;
-    var vowels = '/[^aeiou]/gi';
-    for (var i = 0; i < vowels.length; i++) {
-        if (vowels.includes(text[i].toLowerCase())) {
+    var vowels = 'aeiou';
+    for (var _i = 0, text_1 = text; _i < text_1.length; _i++) {
+        var char = text_1[_i];
+        if (vowels.includes(char.toLowerCase())) {
             totalVowels++;
         }
     }

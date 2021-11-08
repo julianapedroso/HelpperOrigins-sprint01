@@ -11,14 +11,14 @@ const getInputValue = (event: Event): void => {
 const vowelsCountInput = (word: string): number => {
 
     let totalVowels: number = 0;
-    const vowels: string = '/[^aeiou]/gi';
+    const vowels: string = 'aeiou';
 
-    for (let i = 0; i < vowels.length; i++) {
-        if(vowels.includes(word[i].toLowerCase())) {
+    for (let char of word) {
+        if(vowels.includes(char.toLowerCase())) {
             totalVowels++;
         }
     }
-
+    
     return totalVowels;
 }
 

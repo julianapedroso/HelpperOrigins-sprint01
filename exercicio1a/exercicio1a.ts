@@ -3,10 +3,10 @@
 
 const vowelsCount = (text: string): number => {
     let totalVowels: number = 0;
-    const vowels: string = '/[^aeiou]/gi';
+    const vowels: string = 'aeiou';
 
-    for (let i = 0; i < vowels.length; i++) {
-        if(vowels.includes(text[i].toLowerCase())) {
+    for (let char of text) {
+        if(vowels.includes(char.toLowerCase())) {
             totalVowels++;
         }
     }
