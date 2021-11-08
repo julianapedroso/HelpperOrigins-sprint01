@@ -54,3 +54,18 @@ var deleteItemById = function (id) {
 console.log("old list:", list);
 console.log(deleteItemById(2));
 console.log("new list:", list);
+// d) Crie uma função que altere a bio ou o name a partir de um id passado
+var updateItemById = function (id, newName, newBio) {
+    for (var i = 0; i < list.length; i++) {
+        if (list[i].id === id) {
+            if (newName) {
+                list[i].name = newName;
+            }
+            if (newBio) {
+                list[i].bio = newBio;
+            }
+        }
+    }
+};
+console.log(updateItemById(3, 'Alterando o name', 'Alterando a bio'));
+console.log("updateList:", list);
